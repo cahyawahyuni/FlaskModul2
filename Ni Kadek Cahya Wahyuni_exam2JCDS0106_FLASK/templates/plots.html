@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>Data Visualization</h1>
+    <div class="row">
+        <div class="col-md-6">
+                <p>Distribusi Data Kolom MPG</p>
+                <div class="chart" id="dist_mpg"></div>
+        </div>
+        <div class="col-md-6">
+                <p>Distribusi Data Kolom Horsepower</p>
+                <div class="chart" id="dist_horsepower"></div>
+        </div>
+    </div>
+    
+    <script>
+        Plotly.plot('dist_mpg', {{data[0] | safe}}, {})
+        Plotly.plot('dist_horsepower', {{data[1] | safe}}, {})
+    </script>
+
+{% endblock body %}
